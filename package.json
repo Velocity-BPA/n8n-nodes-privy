@@ -1,0 +1,86 @@
+{
+  "name": "n8n-nodes-privy",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Privy wallet-as-a-service platform, providing user management, embedded wallets, server wallets, delegated wallets, and authentication operations for Web3 applications.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-privy.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-privy#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-privy/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "privy",
+    "wallet",
+    "embedded-wallet",
+    "web3",
+    "blockchain",
+    "ethereum",
+    "solana",
+    "mpc",
+    "authentication",
+    "wallet-as-a-service",
+    "waas",
+    "self-custodial"
+  ],
+  "main": "dist/nodes/Privy/Privy.node.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/PrivyApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Privy/Privy.node.js",
+      "dist/nodes/Privy/PrivyTrigger.node.js"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.0",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
